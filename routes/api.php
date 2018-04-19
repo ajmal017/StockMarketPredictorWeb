@@ -22,3 +22,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('markets', 'Api\MarketPrediction@create');
 
 Route::get('markets', 'Api\MarketPrediction@index');
+
+Route::post('headlines', 'Api\NewsInfoController@create');

@@ -16,3 +16,5 @@ Route::get('/', 'MarketPrediction@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'MarketPrediction@index')->name('home');
+
+Route::get('/prediction/{id}', 'MarketPrediction@predictionInformation')->name('prediction');
