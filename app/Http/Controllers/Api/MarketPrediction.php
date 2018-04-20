@@ -32,6 +32,6 @@ class MarketPrediction extends Controller
 
         $info->save();
 
-        return response()->json($info, 201);
+        return $info->id;
     }
 }

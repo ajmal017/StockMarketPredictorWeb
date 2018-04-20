@@ -24,15 +24,19 @@ class NewsInfoController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function create(Request $request){
+
+        $count = 0;
         foreach($request->news_headlines as $headline){
             $newsHeadline = new NewsInfo();
 
             $newsHeadline->date = $request->date;
             $newsHeadline->market_info_id = $request->prediction_id;
             $newsHeadline->news_headline = $headline;
+            $newsHeadline->sentiment = $request->headline_sentiments[$count];
 
             $newsHeadline->save();
 
+            $count++;
         }
 
         return response()->json($newsHeadline, 201);

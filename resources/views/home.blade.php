@@ -12,13 +12,13 @@
             <th> Trend Predictioin</th>
         </tr>
         @foreach($predictions as $pred)
-            <tr>
-                <th>{{ $pred->date }}</th>
-                <th>{{ $pred->market_name }}</th>
-                <th>{{ $pred->prev_day_low }}</th>
-                <th>{{ $pred->prev_day_high }}</th>
-                <th>{{ $pred->prediction }}</th>
-            </tr>
+                <tr>
+                    <th><a href="/prediction/{{$pred->id}}">{{ $pred->date }}</a></th>
+                    <th>{{ $pred->market_name }}</th>
+                    <th>{{ $pred->prev_day_low }}</th>
+                    <th>{{ $pred->prev_day_high }}</th>
+                    <th>{{ $pred->prediction }}</th>
+                </tr>
         @endforeach
     </table>
 </div>
